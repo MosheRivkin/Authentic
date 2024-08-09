@@ -1,0 +1,26 @@
+---
+import { FloatingInput, FloatingLabel } from "@/components/ui/floating-input";
+---
+
+<div class="space-y-3">
+  <div class="relative">
+    <FloatingInput
+      id="password-input"
+      type="password"
+      className="w-full"
+      autoComplete="new-password"
+    />
+    <FloatingLabel htmlFor="password-input"> Create Password </FloatingLabel>
+  </div>
+
+  <div class="relative">
+    <FloatingInput
+      id="confirm-password-input"
+      type="password"
+      className="w-full"
+    />
+    <FloatingLabel htmlFor="confirm-password-input">
+      Confirm Password
+    </FloatingLabel>
+  </div>
+</div>

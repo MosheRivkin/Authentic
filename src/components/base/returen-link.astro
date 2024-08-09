@@ -1,0 +1,24 @@
+---
+import { cn } from "@/utils/cn";
+import { buttonVariants } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+interface LinkDestractiveProps {
+  className?: string;
+  href?: string;
+  prefetch?: boolean;
+}
+const { className, href, prefetch }: LinkDestractiveProps = Astro.props;
+---
+
+<a
+  data-astro-prefetch={prefetch}
+  href={href}
+  class={cn(
+    buttonVariants({ variant: "link" }),
+    "p-0 w-full text-start  flex justify-start text-foreground/70",
+    className
+  )}
+>
+  <ChevronLeft />
+  <slot />
+</a>

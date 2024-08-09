@@ -1,0 +1,35 @@
+---
+import AuthPageLayout from "@/layouts/auth-page-layout.astro";
+import Header from "@/components/base/header.astro";
+import Inputs from "@/pages/sign-up/inputs.astro";
+import TextSeparator from "@/components/base/text-separator.astro";
+import Layout from "@/layouts/Layout.astro";
+import OauthButtons from "@/components/base/oauth-buttons.astro";
+import TextLine from "@/components/base/text-line.astro";
+import DestructiveLink from "@/components/base/destructive-link.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout title="Sign Up | Authentic">
+  <AuthPageLayout>
+    <Fragment slot="form-section">
+      <Header
+        title="Sign up"
+        description="Let’s get you all st up so you can access your personal account."
+      />
+      <Inputs />
+      <div>
+        <Button className="w-full font-semibold" client:idle> Sign up </Button>
+        <TextLine>
+          Already have an account?
+          <DestructiveLink href="/login"> Login </DestructiveLink>
+        </TextLine>
+      </div>
+      <TextSeparator text="Or sign up with" />
+      <OauthButtons />
+    </Fragment>
+    <Fragment slot="pic-section">
+      <img src="/public/img/sign-up-pic.png" alt="" class="" />
+    </Fragment>
+  </AuthPageLayout>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import TextSeparator from "@/components/base/text-separator.astro";
+import Inputs from "@/pages/reset-password/enter-email/inputs.astro";
+import AuthPageLayout from "@/layouts/auth-page-layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/base/header.astro";
+import OauthButtons from "@/components/base/oauth-buttons.astro";
+import ReturenLink from "@/components/base/returen-link.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout title="Login | Authentic">
+  <AuthPageLayout>
+    <Fragment slot="form-section">
+      <div class="space-y-5">
+        <ReturenLink className="" href="/login">Back to login</ReturenLink>
+        <Header
+          title="Forgot your password?"
+          description="Don’t worry, happens to all of us. Enter your email below to recover your password"
+        />
+      </div>
+      <div class="flex flex-col gap-5">
+        <Inputs />
+
+        <Button className="w-full font-semibold" client:idle>
+          Send verification code
+        </Button>
+      </div>
+      <TextSeparator text="Or login with" />
+      <OauthButtons />
+    </Fragment>
+    <Fragment slot="pic-section">
+      <img src="/public/img/auth-tools-pic.png" alt="" class="" />
+    </Fragment>
+  </AuthPageLayout>
+</Layout>

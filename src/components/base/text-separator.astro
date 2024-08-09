@@ -1,9 +1,13 @@
 ---
 import { Separator } from "@/components/ui/separator";
+interface Props {
+  text: string;
+}
+const { text }: Props = Astro.props;
 ---
 
 <div class="flex items-center justify-between">
   <Separator className="w-1/3  border-[1.5px] rounded-full" />
-  <p class="min-w-32 w-1/3 text-center text-foreground/50">Or login with</p>
+  <p class="min-w-32 w-1/3 text-center text-foreground/50">{text}</p>
   <Separator className="w-1/3 border-[1.5px] rounded-full" />
 </div>

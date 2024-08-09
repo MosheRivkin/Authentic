@@ -1,0 +1,23 @@
+---
+import TextLine from "@/components/base/text-line.astro";
+import { Button } from "@/components/ui/button";
+import { FloatingInput, FloatingLabel } from "@/components/ui/floating-input";
+---
+
+<div class="space-y-2">
+  <div class="relative">
+    <FloatingInput
+      id="enter-code-input"
+      type="password"
+      className="w-full"
+      autoComplete=""
+    />
+    <FloatingLabel htmlFor="enter-code-input"> Enter Code </FloatingLabel>
+  </div>
+  <TextLine>
+    Didn’t receive a code?
+    <Button variant="link" className="text-destructive p-0" client:load
+      >Resend</Button
+    >
+  </TextLine>
+</div>
