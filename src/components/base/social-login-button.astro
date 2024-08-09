@@ -1,0 +1,16 @@
+---
+import { Button } from "@/components/ui/button";
+interface SocialLoginButtonProps {
+  onClick?: () => void;
+}
+const { onClick }: SocialLoginButtonProps = Astro.props;
+---
+
+<Button
+  variant={"outline"}
+  className="flex items-center w-3/12  border-primary hover:bg-primary/10 rounded-md focus:ring-2 ring-primary ring-offset-1 "
+  onClick={onClick}
+  client:idle
+>
+  <slot />
+</Button>
