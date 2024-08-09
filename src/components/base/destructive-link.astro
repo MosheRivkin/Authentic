@@ -1,0 +1,22 @@
+---
+import { cn } from "@/utils/cn";
+import { buttonVariants } from "../ui/button";
+interface LinkDestractiveProps {
+  className?: string;
+  href?: string;
+  prefetch?: boolean;
+}
+const { className, href, prefetch }: LinkDestractiveProps = Astro.props;
+---
+
+<a
+  data-astro-prefetch={prefetch}
+  href={href}
+  class={cn(
+    buttonVariants({ variant: "link" }),
+    "text-destructive p-0",
+    className
+  )}
+>
+  <slot />
+</a>

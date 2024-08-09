@@ -1,35 +1,36 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
+import DestructiveLink from "@/components/base/destructive-link.astro";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FloatingInput, FloatingLabel } from "@/components/ui/floating-input";
 import { Label } from "@/components/ui/label";
-import { cn } from "@/utils/cn";
 ---
 
 <div class="space-y-3">
   <div class="relative">
-    <FloatingInput className="w-full" />
-    <FloatingLabel> Email </FloatingLabel>
+    <FloatingInput
+      id="email-input"
+      type="email"
+      className="w-full"
+      autoComplete="email"
+    />
+    <FloatingLabel htmlFor="email-input"> Email </FloatingLabel>
   </div>
   <div class="relative">
-    <FloatingInput type="password" className="w-full" />
-    <FloatingLabel> Password </FloatingLabel>
+    <FloatingInput
+      id="password-input"
+      type="password"
+      className="w-full"
+      autoComplete="current-password"
+    />
+    <FloatingLabel htmlFor="password-input"> Password </FloatingLabel>
   </div>
   <div class="flex justify-between">
     <div class="flex items-center gap-2">
       <Checkbox className="rounded-lg" id="remember-me-checkbox" client:load />
-      <Label
-        htmlFor="remember-me-checkbox"
-        className="text-foreground/70 select-none"
-      >
+      <Label htmlFor="remember-me-checkbox" className="text-foreground/70 ">
         Remember me
       </Label>
     </div>
-    <a
-      href="#"
-      class={cn(buttonVariants({ variant: "link" }), "text-destructive p-0")}
-    >
-      Forgot password?
-    </a>
+    <DestructiveLink href="#">Forgot password?</DestructiveLink>
   </div>
 </div>

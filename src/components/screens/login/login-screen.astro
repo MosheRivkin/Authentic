@@ -1,23 +1,21 @@
 ---
-import Logo from "@/components/base/logo.astro";
 import LoginSeparator from "./login-separator.astro";
 import SosialLogin from "./social-login.astro";
 import SubbmitBtn from "./subbmit-btn.astro";
 import Inputs from "./inputs.astro";
 import Header from "./header.astro";
+import AuthPageLayout from "@/layouts/auth-page-layout.astro";
 ---
 
-<section
-  class="w-full lg:w-7/12 px-[5vw] sm:px-[20vw] lg:px-[10vw] flex h-screen items-center xl:w-1/2"
->
-  <div class="h-5/6 w-full flex flex-col justify-evenly">
-    <Logo className="absolute top-2 left-2" />
+<AuthPageLayout>
+  <Fragment slot="form-section">
     <Header />
     <Inputs />
     <SubbmitBtn />
     <LoginSeparator />
     <SosialLogin />
-  </div>
-</section>
-
-<section class="lg:flex hidden w-5/12 xl:w-1/2"></section>
+  </Fragment>
+  <Fragment slot="pic-section">
+    <img src="/public/img/succes-auth-pic.png" alt="" class="" />
+  </Fragment>
+</AuthPageLayout>

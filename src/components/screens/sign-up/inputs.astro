@@ -1,0 +1,86 @@
+---
+import DestructiveLink from "@/components/base/destructive-link.astro";
+import { Checkbox } from "@/components/ui/checkbox";
+import { FloatingInput, FloatingLabel } from "@/components/ui/floating-input";
+import { Label } from "@/components/ui/label";
+const className = {
+  grop2InputDiv: "flex justify-between gap-2 flex-col lg:flex-row",
+};
+---
+
+<div class="space-y-3">
+  <div class={className.grop2InputDiv}>
+    <div class="relative flex-1">
+      <FloatingInput
+        id="first-name-input"
+        type="text"
+        className="w-full"
+        autoComplete="given-name"
+      />
+      <FloatingLabel htmlFor="first-name-input"> First Name </FloatingLabel>
+    </div>
+    <div class="relative flex-1">
+      <FloatingInput
+        id="last-name-input"
+        type="text"
+        className="w-full"
+        autoComplete="family-name"
+      />
+      <FloatingLabel htmlFor="last-name-input"> Last Name </FloatingLabel>
+    </div>
+  </div>
+  <div class={className.grop2InputDiv}>
+    <div class="relative flex-1">
+      <FloatingInput
+        id="email-input"
+        type="email"
+        className="w-full"
+        autoComplete="email"
+      />
+      <FloatingLabel htmlFor="email-input"> Email </FloatingLabel>
+    </div>
+    <div class="relative flex-1">
+      <FloatingInput
+        id="phone-number-input"
+        type="tel"
+        className="w-full"
+        autoComplete="tel"
+      />
+      <FloatingLabel htmlFor="phone-number-input"> Phone Number </FloatingLabel>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="relative">
+      <FloatingInput
+        id="password-input"
+        type="password"
+        className="w-full"
+        autoComplete="new-password"
+      />
+      <FloatingLabel htmlFor="password-input"> Password </FloatingLabel>
+    </div>
+
+    <div class="relative">
+      <FloatingInput
+        id="confirm-password-input"
+        type="password"
+        className="w-full"
+      />
+      <FloatingLabel htmlFor="confirm-password-input">
+        Confirm Password
+      </FloatingLabel>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <div class="flex items-center gap-2">
+      <Checkbox className="rounded-lg" id="remember-me-checkbox" client:load />
+      <Label htmlFor="remember-me-checkbox" className="text-foreground/70 ">
+        I agree to all the
+
+        <DestructiveLink href="#">Terms</DestructiveLink>
+        and
+        <DestructiveLink href="#">Privacy Policy</DestructiveLink>
+      </Label>
+    </div>
+  </div>
+</div>

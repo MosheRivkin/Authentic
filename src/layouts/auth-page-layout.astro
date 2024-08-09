@@ -1,0 +1,18 @@
+---
+import Logo from "@/components/base/logo.astro";
+---
+
+<main class="flex">
+  <section
+    class="w-full lg:w-7/12 px-[5vw] sm:px-[20vw] lg:px-[10vw] flex h-screen items-center xl:w-1/2"
+  >
+    <Logo className="absolute top-2 left-2" />
+    <div class="h-5/6 w-full flex flex-col justify-evenly">
+      <slot name="form-section" />
+    </div>
+  </section>
+
+  <section class="lg:flex hidden w-5/12 xl:w-1/2 h-screen py-20 justify-center">
+    <slot name="pic-section" />
+  </section>
+</main>

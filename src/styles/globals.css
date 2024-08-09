@@ -60,6 +60,15 @@
     }
   }
 }
+::selection {
+  background-color: #7c3aed;
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: #7c3aed;
+  color: #fff;
+}
 
 @layer base {
   * {
