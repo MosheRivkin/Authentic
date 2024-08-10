@@ -2,7 +2,7 @@
 import TextSeparator from "@/components/base/text-separator.astro";
 import Inputs from "@/pages/reset-password/enter-email/inputs.astro";
 import AuthPageLayout from "@/layouts/auth-page-layout.astro";
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@/layouts/layout.astro";
 import Header from "@/components/base/header.astro";
 import OauthButtons from "@/components/base/oauth-buttons.astro";
 import ReturenLink from "@/components/base/returen-link.astro";
@@ -30,7 +30,7 @@ import { Button } from "@/components/ui/button";
       <OauthButtons />
     </Fragment>
     <Fragment slot="pic-section">
-      <img src="/public/img/auth-tools-pic.png" alt="" class="" />
+      <img src="/img/auth-tools-pic.png" alt="" class="" />
     </Fragment>
   </AuthPageLayout>
 </Layout>
